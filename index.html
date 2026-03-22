@@ -1,0 +1,99 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Tocaê | Aprenda música de forma rápida e divertida</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="app-container">
+    <!-- ================= TELA INICIAL ================= -->
+    <div id="homeScreen" class="screen">
+      <div class="logo-wrapper">
+        <div class="logo-icon">🎸</div>
+        <h1 class="logo-text">Tocaê</h1>
+      </div>
+      <div class="welcome-card">
+        <h2>🎵 Aprenda música de verdade</h2>
+        <p>Vídeos curtos, letras sincronizadas e um jeito viciante de evoluir.<br>Pegue seu instrumento e vamos nessa!</p>
+        <button id="btnComecar" class="btn-primary btn-glow">🎸 Começar agora</button>
+      </div>
+      <div class="hero-illustration">
+        <span>⚡</span><span>🎶</span><span>🎹</span>
+      </div>
+    </div>
+
+    <!-- ================= DASHBOARD (LIÇÕES) ================= -->
+    <div id="dashboardScreen" class="screen hidden">
+      <div class="dashboard-header">
+        <div class="logo-small">
+          <span class="logo-icon-mini">🎸</span>
+          <strong>Tocaê</strong>
+        </div>
+        <div class="xp-progress">
+          <div class="xp-label">
+            <span>⭐ Seu XP</span>
+            <span id="totalXpDisplay">0</span>
+          </div>
+          <div class="progress-bar-bg">
+            <div id="xpProgressFill" class="progress-fill" style="width: 0%;"></div>
+          </div>
+        </div>
+      </div>
+      <div class="welcome-message">
+        <h3>🎧 Olá, musicista!</h3>
+        <p>Escolha uma lição e comece a tocar agora mesmo.</p>
+      </div>
+      <div id="lessonsList" class="lessons-grid"></div>
+    </div>
+
+    <!-- ================= TELA DE AULA ================= -->
+    <div id="lessonScreen" class="screen hidden">
+      <div class="lesson-nav">
+        <button id="backToDashboardBtn" class="btn-back">← Voltar</button>
+        <div class="lesson-title-area">
+          <span id="lessonInstrumentIcon">🎸</span>
+          <h2 id="lessonName">Aula</h2>
+        </div>
+        <div class="lesson-xp-badge" id="lessonXpBadge">+0 XP</div>
+      </div>
+
+      <!-- Player de vídeo (placeholder) -->
+      <div class="video-container">
+        <div class="video-placeholder" id="videoPlaceholder">
+          <div class="play-icon-overlay">▶</div>
+          <img src="https://placehold.co/800x450/2d1b4e/ffffff?text=Tocaê+Video+Aula" alt="video thumb" class="video-thumb">
+        </div>
+        <div class="video-controls">
+          <button id="playPauseBtn" class="ctrl-btn">▶ Play</button>
+        </div>
+      </div>
+
+      <!-- Letra da música sincronizada (simulação) -->
+      <div class="lyrics-card">
+        <h3>🎤 Letra sincronizada</h3>
+        <div id="lyricsContent" class="lyrics-content">
+          <p>Carregando letra...</p>
+        </div>
+        <div class="simulate-tip">⏵ A letra acompanha o ritmo (simulação)</div>
+      </div>
+
+      <!-- Botão concluir lição + progresso -->
+      <div class="lesson-action">
+        <button id="completeLessonBtn" class="btn-complete">✅ Concluir lição</button>
+        <div class="lesson-progress-info">
+          <span>Progresso da lição:</span>
+          <div class="mini-progress">
+            <div id="lessonProgressFill" class="mini-progress-fill" style="width: 0%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="/script/main.js"></script>
+</body>
+</html>
