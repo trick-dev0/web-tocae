@@ -1,99 +1,275 @@
-<!-- index.html -->
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Tocaê | Aprenda música de forma rápida e divertida</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tocaê – Aprenda música em poucos minutos. Vídeos curtos e práticos para dominar instrumentos, acordes e técnicas musicais." />
+  <meta name="keywords" content="aprender música, violão, guitarra, teclado, bateria, canto, acordes, técnicas musicais" />
+  <meta name="author" content="Tocaê" />
+  <meta property="og:title" content="Tocaê – Aprenda música em poucos minutos" />
+  <meta property="og:description" content="Vídeos curtos e práticos para dominar instrumentos, acordes e técnicas." />
+  <meta property="og:type" content="website" />
+  <title>Tocaê – Aprenda música em poucos minutos</title>
+  <link rel="stylesheet" href="/style/style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet" />
 </head>
 <body>
-  <div class="app-container">
-    <!-- ================= TELA INICIAL ================= -->
-    <div id="homeScreen" class="screen">
-      <div class="logo-wrapper">
-        <div class="logo-icon">🎸</div>
-        <h1 class="logo-text">Tocaê</h1>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="header__inner container">
+
+      <!-- Logo -->
+      <a href="#" class="logo" aria-label="Tocaê – página inicial">
+        <span class="logo__icon" aria-hidden="true">♪</span>
+        <span class="logo__text">Toca<em>ê</em></span>
+      </a>
+
+      <!-- Navegação desktop -->
+      <nav class="nav" aria-label="Menu principal">
+        <ul class="nav__list">
+          <li><a href="#videos" class="nav__link">Vídeos</a></li>
+          <li><a href="#categorias" class="nav__link">Categorias</a></li>
+          <li><a href="#sobre" class="nav__link">Sobre</a></li>
+        </ul>
+      </nav>
+
+      <!-- Busca -->
+      <div class="header__search">
+        <label for="busca-header" class="sr-only">Pesquisar vídeos</label>
+        <input
+          type="search"
+          id="busca-header"
+          class="search-input"
+          placeholder="Buscar vídeos..."
+          autocomplete="off"
+          aria-label="Pesquisar vídeos por título ou descrição"
+        />
+        <span class="search-icon" aria-hidden="true">⌕</span>
       </div>
-      <div class="welcome-card">
-        <h2>🎵 Aprenda música de verdade</h2>
-        <p>Vídeos curtos, letras sincronizadas e um jeito viciante de evoluir.<br>Pegue seu instrumento e vamos nessa!</p>
-        <button id="btnComecar" class="btn-primary btn-glow">🎸 Começar agora</button>
-      </div>
-      <div class="hero-illustration">
-        <span>⚡</span><span>🎶</span><span>🎹</span>
-      </div>
+
+      <!-- Botão menu mobile -->
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobileMenu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
 
-    <!-- ================= DASHBOARD (LIÇÕES) ================= -->
-    <div id="dashboardScreen" class="screen hidden">
-      <div class="dashboard-header">
-        <div class="logo-small">
-          <span class="logo-icon-mini">🎸</span>
-          <strong>Tocaê</strong>
+    <!-- Menu mobile -->
+    <nav class="mobile-menu" id="mobileMenu" aria-label="Menu mobile" hidden>
+      <ul class="mobile-menu__list">
+        <li><a href="#videos" class="mobile-menu__link">Vídeos</a></li>
+        <li><a href="#categorias" class="mobile-menu__link">Categorias</a></li>
+        <li><a href="#sobre" class="mobile-menu__link">Sobre</a></li>
+      </ul>
+      <div class="mobile-menu__search">
+        <label for="busca-mobile" class="sr-only">Pesquisar vídeos</label>
+        <input
+          type="search"
+          id="busca-mobile"
+          class="search-input search-input--mobile"
+          placeholder="Buscar vídeos..."
+          autocomplete="off"
+          aria-label="Pesquisar vídeos"
+        />
+        <span class="search-icon" aria-hidden="true">⌕</span>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" aria-labelledby="hero-titulo">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__orb hero__orb--1"></div>
+        <div class="hero__orb hero__orb--2"></div>
+        <div class="hero__orb hero__orb--3"></div>
+        <div class="hero__grid"></div>
+      </div>
+      <div class="hero__inner container">
+        <div class="hero__badge" aria-hidden="true">🎵 Plataforma gratuita de aprendizado musical</div>
+        <h1 class="hero__titulo" id="hero-titulo">
+          Aprenda música<br />
+          <span class="hero__destaque">em poucos minutos</span>
+        </h1>
+        <p class="hero__subtitulo">
+          Vídeos curtos e práticos para dominar instrumentos,<br class="br-desktop" />
+          acordes e técnicas — do zero ao intermediário.
+        </p>
+        <div class="hero__acoes">
+          <a href="#videos" class="btn btn--primary">
+            <span>Explorar Vídeos</span>
+            <span class="btn__arrow" aria-hidden="true">→</span>
+          </a>
+          <a href="#categorias" class="btn btn--ghost">Ver categorias</a>
         </div>
-        <div class="xp-progress">
-          <div class="xp-label">
-            <span>⭐ Seu XP</span>
-            <span id="totalXpDisplay">0</span>
+        <div class="hero__stats" aria-label="Estatísticas da plataforma">
+          <div class="hero__stat">
+            <strong>50+</strong>
+            <span>Vídeos</span>
           </div>
-          <div class="progress-bar-bg">
-            <div id="xpProgressFill" class="progress-fill" style="width: 0%;"></div>
+          <div class="hero__stat-divider" aria-hidden="true"></div>
+          <div class="hero__stat">
+            <strong>6</strong>
+            <span>Categorias</span>
+          </div>
+          <div class="hero__stat-divider" aria-hidden="true"></div>
+          <div class="hero__stat">
+            <strong>100%</strong>
+            <span>Gratuito</span>
           </div>
         </div>
       </div>
-      <div class="welcome-message">
-        <h3>🎧 Olá, musicista!</h3>
-        <p>Escolha uma lição e comece a tocar agora mesmo.</p>
+    </section>
+
+    <!-- ===== FILTROS / CATEGORIAS ===== -->
+    <section class="categorias" id="categorias" aria-labelledby="categorias-titulo">
+      <div class="container">
+        <h2 class="section-title" id="categorias-titulo">Explorar por categoria</h2>
+        <div class="filtros" role="group" aria-label="Filtrar vídeos por categoria">
+          <button class="filtro-btn filtro-btn--ativo" data-categoria="todos" aria-pressed="true">
+            🎼 Todos
+          </button>
+          <button class="filtro-btn" data-categoria="Violão" aria-pressed="false">
+            🎸 Violão
+          </button>
+          <button class="filtro-btn" data-categoria="Guitarra" aria-pressed="false">
+            ⚡ Guitarra
+          </button>
+          <button class="filtro-btn" data-categoria="Teclado" aria-pressed="false">
+            🎹 Teclado
+          </button>
+          <button class="filtro-btn" data-categoria="Bateria" aria-pressed="false">
+            🥁 Bateria
+          </button>
+          <button class="filtro-btn" data-categoria="Canto" aria-pressed="false">
+            🎤 Canto
+          </button>
+          <button class="filtro-btn" data-categoria="Notícias" aria-pressed="false">
+            📰 Notícias
+          </button>
+        </div>
       </div>
-      <div id="lessonsList" class="lessons-grid"></div>
+    </section>
+
+    <!-- ===== GRID DE VÍDEOS ===== -->
+    <section class="videos-section" id="videos" aria-labelledby="videos-titulo">
+      <div class="container">
+        <div class="videos-header">
+          <h2 class="section-title" id="videos-titulo">
+            Vídeos em destaque
+          </h2>
+          <p class="videos-count" id="videosCount" aria-live="polite" aria-atomic="true"></p>
+        </div>
+
+        <!-- Grid de cards -->
+        <div class="videos-grid" id="videosGrid" role="list" aria-label="Lista de vídeos">
+          <!-- Preenchido via JavaScript -->
+        </div>
+
+        <!-- Estado vazio -->
+        <div class="empty-state" id="emptyState" hidden aria-live="polite">
+          <div class="empty-state__icon" aria-hidden="true">🎵</div>
+          <h3>Nenhum vídeo encontrado</h3>
+          <p>Tente buscar por outro termo ou selecione outra categoria.</p>
+          <button class="btn btn--ghost" id="limparBusca">Limpar filtros</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SOBRE ===== -->
+    <section class="sobre" id="sobre" aria-labelledby="sobre-titulo">
+      <div class="container">
+        <div class="sobre__inner">
+          <div class="sobre__content">
+            <h2 class="section-title" id="sobre-titulo">O que é o Tocaê?</h2>
+            <p>
+              O <strong>Tocaê</strong> é uma plataforma gratuita de aprendizado musical
+              focada em vídeos curtos e objetivos. Nosso objetivo é tornar o aprendizado
+              de instrumentos acessível a todos — seja você iniciante total ou já tem
+              alguma base.
+            </p>
+            <p>
+              Aqui você encontra conteúdo sobre violão, guitarra, teclado, bateria, canto
+              e as principais novidades do universo musical. Tudo organizado, categorizado
+              e fácil de encontrar.
+            </p>
+            <a href="#videos" class="btn btn--primary">Começar agora</a>
+          </div>
+          <div class="sobre__cards" aria-hidden="true">
+            <div class="sobre__card">🎸<span>Violão & Guitarra</span></div>
+            <div class="sobre__card">🎹<span>Teclado</span></div>
+            <div class="sobre__card">🥁<span>Bateria</span></div>
+            <div class="sobre__card">🎤<span>Canto</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__inner">
+        <div class="footer__brand">
+          <a href="#" class="logo" aria-label="Tocaê">
+            <span class="logo__icon" aria-hidden="true">♪</span>
+            <span class="logo__text">Toca<em>ê</em></span>
+          </a>
+          <p>Aprenda música em poucos minutos.</p>
+        </div>
+        <nav class="footer__nav" aria-label="Links do rodapé">
+          <h3>Categorias</h3>
+          <ul>
+            <li><button class="footer-cat-btn" data-categoria="Violão">Violão</button></li>
+            <li><button class="footer-cat-btn" data-categoria="Guitarra">Guitarra</button></li>
+            <li><button class="footer-cat-btn" data-categoria="Teclado">Teclado</button></li>
+            <li><button class="footer-cat-btn" data-categoria="Bateria">Bateria</button></li>
+            <li><button class="footer-cat-btn" data-categoria="Canto">Canto</button></li>
+            <li><button class="footer-cat-btn" data-categoria="Notícias">Notícias</button></li>
+          </ul>
+        </nav>
+        <div class="footer__info">
+          <h3>Tocaê</h3>
+          <p>Plataforma de aprendizado musical gratuita, criada para quem quer aprender do jeito certo — rápido e prático.</p>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>© 2026 Tocaê. Feito com 🎵 para músicos de todos os níveis.</p>
+        <p class="footer__disclaimer">Os vídeos incorporados são de propriedade de seus respectivos criadores no YouTube.</p>
+      </div>
     </div>
+  </footer>
 
-    <!-- ================= TELA DE AULA ================= -->
-    <div id="lessonScreen" class="screen hidden">
-      <div class="lesson-nav">
-        <button id="backToDashboardBtn" class="btn-back">← Voltar</button>
-        <div class="lesson-title-area">
-          <span id="lessonInstrumentIcon">🎸</span>
-          <h2 id="lessonName">Aula</h2>
+  <!-- ===== MODAL DE VÍDEO ===== -->
+  <div class="modal" id="videoModal" role="dialog" aria-modal="true" aria-labelledby="modalTitulo" hidden>
+    <div class="modal__backdrop" id="modalBackdrop" aria-hidden="true"></div>
+    <div class="modal__container">
+      <div class="modal__header">
+        <div>
+          <span class="modal__categoria" id="modalCategoria"></span>
+          <h2 class="modal__titulo" id="modalTitulo"></h2>
         </div>
-        <div class="lesson-xp-badge" id="lessonXpBadge">+0 XP</div>
+        <button class="modal__fechar" id="modalFechar" aria-label="Fechar vídeo">✕</button>
       </div>
-
-      <!-- Player de vídeo (placeholder) -->
-      <div class="video-container">
-        <div class="video-placeholder" id="videoPlaceholder">
-          <div class="play-icon-overlay">▶</div>
-          <img src="https://placehold.co/800x450/2d1b4e/ffffff?text=Tocaê+Video+Aula" alt="video thumb" class="video-thumb">
-        </div>
-        <div class="video-controls">
-          <button id="playPauseBtn" class="ctrl-btn">▶ Play</button>
-        </div>
+      <div class="modal__player">
+        <iframe
+          id="modalIframe"
+          src=""
+          title="Player de vídeo"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+          loading="lazy"
+        ></iframe>
       </div>
-
-      <!-- Letra da música sincronizada (simulação) -->
-      <div class="lyrics-card">
-        <h3>🎤 Letra sincronizada</h3>
-        <div id="lyricsContent" class="lyrics-content">
-          <p>Carregando letra...</p>
-        </div>
-        <div class="simulate-tip">⏵ A letra acompanha o ritmo (simulação)</div>
-      </div>
-
-      <!-- Botão concluir lição + progresso -->
-      <div class="lesson-action">
-        <button id="completeLessonBtn" class="btn-complete">✅ Concluir lição</button>
-        <div class="lesson-progress-info">
-          <span>Progresso da lição:</span>
-          <div class="mini-progress">
-            <div id="lessonProgressFill" class="mini-progress-fill" style="width: 0%;"></div>
-          </div>
-        </div>
-      </div>
+      <p class="modal__descricao" id="modalDescricao"></p>
     </div>
   </div>
 
-  <script src="/script/main.js"></script>
+  <script src="/script/script.js"></script>
 </body>
 </html>
